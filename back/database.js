@@ -1,11 +1,16 @@
 const { Pool } = require('pg');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+//Configuración de la DB y uso de variables de entorno para mayor seguridad  y portabilidad
 
 const database = new Pool({
-  user: 'roketuser',
-  host: 'tarea.cv2quftjeoly.us-east-1.rds.amazonaws.com',
-  database: 'postgres',
-  password: 'roket2024',
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.HOST,
+  database: process.env.DATABASE,
+  password: process.env.PASSWORD,
+  port: process.env.PUERTO
 });
 
 module.exports = database;

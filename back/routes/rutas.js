@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const db = require('../database');
 
-// Obtener toda la información de la tabla 'arboles' en el esquema 'roket'
+// Definicion de método GET para obtener la información de los árboles y 
+// las tablas relacionadas, para luego transformarlas en un JSON que se consumira a través de un servicio mediante el Front
+
 router.get('/arboles', async (req, res) => {
   try {
     const client = await db.connect();
@@ -28,6 +30,9 @@ router.get('/arboles', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+//Definicion de método POST para almacenar el comentario y el id_postulante en las tablas de acuerdo al arbol_id seleccioado en el Front 
+// las tablas relacionadas, para luego transformarlas en un JSON que se consumira a través de un servicio mediante el Front
 
 router.post('/comentarios', async (req, res) => {
   const { arbolId, comentario, postulanteId } = req.body;
