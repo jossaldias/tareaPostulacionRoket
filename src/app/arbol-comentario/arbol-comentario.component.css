@@ -1,0 +1,36 @@
+.comment-container {
+  position: relative; 
+  top:80px;
+  width: 100%;
+  margin: 60px;
+  padding-bottom: 20px;
+}
+
+.comment-textarea {
+  width: calc(100% - 120px); 
+  height: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.comment-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3e8643; 
+  color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #5fa56d; 
+}
+
+@media screen and (max-width: 768px) {
+ .comment-container {
+  width: 100%;
+}
+}

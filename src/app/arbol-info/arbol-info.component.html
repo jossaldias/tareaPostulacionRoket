@@ -1,0 +1,18 @@
+<div class="container">
+  <select (change)="verDetallesArbol($event)" class="select-arbol">
+    <option value="">Seleccionar Árbol</option>
+    <option *ngFor="let arbol of arboles" [value]="arbol.arbol_id">{{ arbol.nombre_arbol }}</option>
+  </select>
+</div>
+
+<div *ngIf="arbolSeleccionado" class="detalle-arbol">
+  <h1>{{ arbolSeleccionado.nombre_arbol }}</h1>
+  <div class="image-container">
+  <img [src]="arbolSeleccionado.url_foto" style="width: 75%; margin-top: 15px;" alt="Foto del árbol">
+  </div>
+</div>
+
+<app-arbol-map></app-arbol-map>
+
+<app-arbol-comentario [arbolSeleccionado]="arbolSeleccionado"></app-arbol-comentario>
+

@@ -1,0 +1,39 @@
+.select-arbol {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.image-container {
+  margin-left: 5%;
+  width: 40%; 
+  float: left;
+  height: auto; 
+}
+
+.detalle-arbol {
+  background-color: #334d36;
+width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+h1{
+  margin-left: 5%;
+  color: aliceblue;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+  .image-container {
+    width: 100%;
+    margin: 20px;
+    justify-content: center;  
+    text-align: center;
+  }
+
+}
+

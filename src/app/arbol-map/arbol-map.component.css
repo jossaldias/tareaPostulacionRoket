@@ -1,0 +1,22 @@
+.map-container {
+  width:50%; 
+  padding-top:30px;  
+  float: right; 
+  height: 400px;
+}
+
+#map {
+  height: 60vh; 
+  width: 50%; 
+}
+
+
+@media screen and (max-width: 768px) {
+  #map {
+    width: 100%;
+    margin: 20px;
+    justify-content: center;  
+    text-align: center;
+  }
+
+}

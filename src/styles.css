@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #d7f0d6; 
+  color: #334d36; 
+    background: 
+    linear-gradient(rgba(215, 240, 214, 0.7), rgba(215, 240, 214, 0.7)),
+    url('src/assets/img/arbol.png');
+  background-repeat: repeat;
+  background-size: 300px;
+}
+
+a {
+  text-decoration: none;
+  color: #3e8643;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 10px;
+  color: #3e8643;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
