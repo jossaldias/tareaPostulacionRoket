@@ -29,6 +29,16 @@
   background-color: #5fa56d; 
 }
 
+.success-message {
+  width: calc(100% - 120px); 
+  padding: 8px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
 @media screen and (max-width: 768px) {
  .comment-container {
   width: 100%;

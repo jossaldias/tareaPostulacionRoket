@@ -1,4 +1,6 @@
 <div class="comment-container">
+  <div *ngIf="mostrarMensaje" class="success-message"> ¡Comentario agregado correctamente!
+  </div>
   <textarea class="comment-textarea" [(ngModel)]="comentario" placeholder="Escribe tu comentario"></textarea>
   <button class="comment-button" [disabled]="!comentario" (click)="agregarComentario()">Agregar Comentario</button>
 </div>

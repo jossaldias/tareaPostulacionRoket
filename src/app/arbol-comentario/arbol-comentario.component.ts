@@ -9,33 +9,37 @@ import { ArbolService } from '../api-service.service';
 export class ArbolComentarioComponent {
   @Input() arbolSeleccionado: any;
   comentario: string = '';
-  postulanteId: number = 1; 
+  mostrarMensaje: boolean = false; 
 
   constructor(private arbolService: ArbolService) {}
 
   agregarComentario(): void {
-
   console.log('arbolSeleccionado:', this.arbolSeleccionado);
   console.log('comentario:', this.comentario);
-  console.log('postulanteId:', this.postulanteId);
 
-    if (this.arbolSeleccionado && this.comentario.trim() !== '') {
-      const arbolId = this.arbolSeleccionado.arbol_id;
-      this.arbolService.agregarComentario(
-        arbolId,
-        this.comentario,
-        this.postulanteId
-      ).subscribe(
-        (response) => {
-          console.log('Comentario agregado:', response);
-          this.comentario = '';
-        },
-        (error) => {
-          console.error('Error al agregar comentario:', error);
-        }
-      );
-    } else {
-      console.log('Datos insuficientes para agregar comentario');
-    }
+  if (!this.comentario.trim()) {
+    console.log('Por favor, ingresa un comentario');
+    return;
   }
+
+  if (this.arbolSeleccionado) {
+    const arbolId = this.arbolSeleccionado.arbol_id;
+    this.arbolService.agregarComentario(
+      arbolId,
+      this.comentario
+    ).subscribe(
+      (response) => {
+        console.log('Comentario agregado:', response);
+        this.mostrarMensaje = true;
+        this.comentario = '';
+      },
+      (error) => {
+        console.error('Error al agregar comentario:', error);
+      }
+    );
+  } else {
+    console.log('Datos insuficientes para agregar comentario');
+  }
+}
+
 }

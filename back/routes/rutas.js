@@ -35,12 +35,14 @@ router.get('/arboles', async (req, res) => {
 // las tablas relacionadas, para luego transformarlas en un JSON que se consumira a través de un servicio mediante el Front
 
 router.post('/comentarios', async (req, res) => {
-  const { arbolId, comentario, postulanteId } = req.body;
+  const { arbol_id, postulante_id, comentario } = req.body;
 
   try {
     const client = await db.connect();
-    const query = 'INSERT INTO comentarios (arbol_id, postulante_id, comentario) VALUES ($1, $2, $3)';
-    const values = [arbolId, postulanteId, comentario];
+    
+    const query = 'INSERT INTO roket.comentarios (arbol_id, postulante_id, comentario) VALUES ($1, $2, $3)';
+    const values = [arbol_id, postulante_id, comentario];
+
     await client.query(query, values);
     client.release();
     res.json({ message: 'Comentario agregado correctamente' });

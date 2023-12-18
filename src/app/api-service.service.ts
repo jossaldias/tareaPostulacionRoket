@@ -34,17 +34,20 @@ export class ArbolService {
     this.arbolSeleccionadoSubject.next(arbol);
   }
 
-agregarComentario(arbolId: number, comentario: string, postulanteId: number): Observable<any> {
-  const body = {
-    arbol_id: arbolId,
-    comentario: comentario,
-    postulante_id: postulanteId
-  };
-  return this.http.post<any>(`${this.apiUrl}/comentarios`, body).pipe(
-    catchError(this.handleError)
-  );
-}
+ agregarComentario(arbolId: number, comentario: string): Observable<any> {
+    const postulanteId = '448'; 
 
+    const body = {
+      arbol_id: arbolId,
+      comentario: comentario,
+      postulante_id: postulanteId
+    };
+
+    return this.http.post<any>(`${this.apiUrl}/comentarios`, body)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
  private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'Error desconocido';
